@@ -1,0 +1,74 @@
+.title kicad schematic
+
+.ic v(bl_net)=0.6 v(blb_net)=0.6 v(net-_n10-pad2_)=0.6 v(net-_n10-pad3_)=0.6 v(net-_cs2-pad1_)=0
+
+.include NMOS-180nm.lib
+.include PMOS-180nm.lib
+c4 /blb gnd 100f
+c1 net-_c1-pad1_ gnd 10f
+mn3 net-_n10-pad3_ net-_n3-pad2_ /blb gnd CMOSN W=1.0u L=0.18u M=1
+mn2 net-_cs1-pad1_ gnd /blb gnd CMOSN W=0.24u L=0.18u M=1
+mp8 net-_n17-pad1_ net-_enable1-pad1_ net-_p8-pad3_ net-_p8-pad3_ CMOSP W=0.44u L=0.18u M=1
+vdd3 net-_p8-pad3_ gnd  dc 1.2
+mn15 net-_c1-pad1_ net-_n13-pad1_ net-_n15-pad3_ gnd CMOSN W=0.3u L=0.18u M=1
+mn16 net-_n15-pad3_ net-_enable1-pad1_ gnd gnd CMOSN W=0.22u L=0.18u M=1
+* u1 net-_c1-pad1_ plot_v1
+cs1 net-_cs1-pad1_ gnd 30f
+c2 gnd net-_c2-pad2_ 10f
+* u2 net-_c2-pad2_ plot_v1
+mp7 net-_c1-pad1_ net-_n13-pad1_ net-_p6-pad1_ net-_p6-pad3_ CMOSP W=0.6u L=0.18u M=1
+mn17 net-_n17-pad1_ net-_enable1-pad1_ gnd gnd CMOSN W=0.22u L=0.18u M=1
+mp6 net-_p6-pad1_ net-_n17-pad1_ net-_p6-pad3_ net-_p6-pad3_ CMOSP W=0.44u L=0.18u M=1
+vdd2 net-_p6-pad3_ gnd  dc 1.2
+mn6 net-_n10-pad3_ net-_csel1-pad1_ net-_c1-pad1_ gnd CMOSN W=0.24u L=0.18u M=1
+venable1 net-_enable1-pad1_ gnd pulse(0 1.2 22n 0.5n 0.5n 15n 100n)
+vdd4 net-_n7-pad1_ gnd  dc 0.6
+mn5 net-_c2-pad2_ net-_csel1-pad1_ net-_n10-pad2_ gnd CMOSN W=0.24u L=0.18u M=1
+c3 /bl gnd 100f
+cs2 net-_cs2-pad1_ gnd 30f
+vwl1 net-_n1-pad2_ gnd pulse(0 1.2 8n 0.5n 0.5n 29n 100n)
+mn1 net-_cs2-pad1_ net-_n1-pad2_ /bl gnd CMOSN W=0.24u L=0.18u M=1
+vdd1 net-_n3-pad2_ gnd  dc 1.2
+mn4 net-_n10-pad2_ net-_n3-pad2_ /bl gnd CMOSN W=1.0u L=0.18u M=1
+vdd9 net-_p2-pad4_ gnd  dc 1.2
+mn19 net-_n18-pad3_ net-_enable1-pad1_ gnd gnd CMOSN W=0.22u L=0.18u M=1
+mn13 net-_n13-pad1_ net-_db1-pad1_ gnd gnd CMOSN W=0.22u L=0.18u M=1
+mn18 net-_c2-pad2_ net-_n14-pad1_ net-_n18-pad3_ gnd CMOSN W=0.3u L=0.18u M=1
+mn7 net-_n7-pad1_ net-_n7-pad2_ net-_n10-pad2_ gnd CMOSN W=0.8u L=0.18u M=1
+mn9 net-_n10-pad2_ net-_n7-pad2_ net-_n10-pad3_ gnd CMOSN W=0.5u L=0.18u M=1
+mn8 net-_n10-pad3_ net-_n7-pad2_ net-_n7-pad1_ gnd CMOSN W=0.8u L=0.18u M=1
+mn12 net-_n10-pad1_ net-_n12-pad2_ gnd gnd CMOSN W=6u L=0.18u M=1
+vsan1 net-_n12-pad2_ gnd pulse(0 1.2 12n 0.5n 0.5n 25n 100n)
+mn10 net-_n10-pad1_ net-_n10-pad2_ net-_n10-pad3_ gnd CMOSN W=2.0u L=0.18u M=1
+vcsel1 net-_csel1-pad1_ gnd pulse(0 1.2 22n 500p 500p 15n 100n)
+mp5 net-_n14-pad1_ net-_d1-pad1_ net-_p5-pad3_ net-_p5-pad3_ CMOSP W=0.44u L=0.18u M=1
+vdd8 net-_p5-pad3_ gnd  dc 1.2
+vd1 net-_d1-pad1_ gnd  dc 1.2
+mp3 net-_n10-pad3_ net-_n10-pad2_ net-_p1-pad3_ net-_p3-pad4_ CMOSP W=3.0u L=0.18u M=1
+mp2 net-_p1-pad3_ net-_n10-pad3_ net-_n10-pad2_ net-_p2-pad4_ CMOSP W=3.0u L=0.18u M=1
+mp1 net-_p1-pad1_ net-_p1-pad2_ net-_p1-pad3_ net-_p1-pad1_ CMOSP W=9.0u L=0.18u M=1
+vsap1 net-_p1-pad2_ gnd pulse(1.2 0 12n 0.5n 0.5n 25n 100n)
+vdd6 net-_p1-pad1_ gnd  dc 1.2
+vdd10 net-_p3-pad4_ gnd  dc 1.2
+vpre1 net-_n7-pad2_ gnd pulse(1.2 0 0n 500p 500p 7.5n 100n)
+mn14 net-_n14-pad1_ net-_d1-pad1_ gnd gnd CMOSN W=0.22u L=0.18u M=1
+mn11 net-_n10-pad2_ net-_n10-pad3_ net-_n10-pad1_ gnd CMOSN W=2.0u L=0.18u M=1
+mp4 net-_n13-pad1_ net-_db1-pad1_ net-_p4-pad3_ net-_p4-pad3_ CMOSP W=0.44u L=0.18u M=1
+vdb1 net-_db1-pad1_ gnd  dc 0
+vdd5 net-_p4-pad3_ gnd  dc 1.2
+mp9 net-_p10-pad3_ net-_n17-pad1_ net-_p10-pad4_ net-_p10-pad4_ CMOSP W=0.44u L=0.18u M=1
+vdd7 net-_p10-pad4_ gnd  dc 1.2
+mp10 net-_c2-pad2_ net-_n14-pad1_ net-_p10-pad3_ net-_p10-pad4_ CMOSP W=0.6u L=0.18u M=1
+.tran 0.1n 45n uic
+
+.tran 0.1e-09 45e-09 0e-09
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+plot v(net-_c1-pad1_)
+plot v(net-_c2-pad2_)
+.endc
+.end

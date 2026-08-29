@@ -1,0 +1,42 @@
+.title kicad schematic
+
+.include NMOS-180nm.lib
+.include PMOS-180nm.lib
+vsap1 /sap gnd pulse(1.2 0 20n 1n 1n 15n 50n)
+vcc/2 /vcc/2 gnd  dc 0.6
+vsan1 /san gnd pulse(0 1.2 20n 1n 1n 15n 50n)
+vpre1 /pre gnd pulse(1.2 0 0n 1n 1n 8n 50n)
+vcc1 /vcc gnd  dc 1.2
+mp1 net-_n1-pad3_ /dqb net-_p1-pad3_ /vcc CMOSP W=1.2 L=0.18 M=1
+mn9 /blb /pre /vcc/2 gnd CMOSN W=1.0 L=0.18 M=1
+mn4 net-_n1-pad3_ /lra /blb gnd CMOSN W=100u L=100u M=1
+mn3 net-_n1-pad1_ /san gnd gnd CMOSN W=100u L=100u M=1
+mn6 /dqb /dcg net-_n1-pad3_ gnd CMOSN W=0.5 L=0.18 M=1
+mn1 net-_n1-pad1_ /dqb net-_n1-pad3_ gnd CMOSN W=0.6 L=0.18 M=1
+mn7 net-_n2-pad1_ /dcg /dq gnd CMOSN W=0.5 L=0.18 M=1
+mn11 net-_cs2-pad1_ /wl0 /bl gnd CMOSN W=100u L=100u M=1
+mp5 net-_n2-pad1_ /san /bl /vcc CMOSP W=1.0 L=0.18 M=1
+mn2 net-_n2-pad1_ /dq net-_n1-pad1_ gnd CMOSN W=0.6 L=0.18 M=1
+cs2 net-_cs2-pad1_ gnd 100f
+mn8 /vcc/2 /pre /bl gnd CMOSN W=100u L=100u M=1
+mp3 /vcc /sap net-_p1-pad3_ /vcc CMOSP W=2.0 L=0.18 M=1
+mp2 net-_p1-pad3_ /dq net-_n2-pad1_ /vcc CMOSP W=100u L=100u M=1
+mn5 /bl /nlra net-_n2-pad1_ gnd CMOSN W=0.5 L=0.18 M=1
+mn10 /bl /pre /blb gnd CMOSN W=1.0 L=0.18 M=1
+mn12 /blb /wl1 net-_cs1-pad1_ gnd CMOSN W=0.5 L=0.18 M=1
+mp4 /blb /san net-_n1-pad3_ /vcc CMOSP W=1.0 L=0.18 M=1
+cs1 net-_cs1-pad1_ gnd 100f
+vwl0 /wl0 gnd pwl(0n 0 10n 0 11n 1.2 35n 1.2 36n 0 110n 0 111n 1.2 135n 1.2 136n 0 200n 0)
+vwl1 /wl1 gnd pwl(0n 0 60n 0 61n 1.2 85n 1.2 86n 0 160n 0 161n 1.2 185n 1.2 186n 0 200n 0)
+vnlra1 /nlra gnd pulse(1.2 0 10n 1n 1n 30n 50n)
+vlra1 /lra gnd pulse(0 1.2 10n 1n 1n 30n 50n)
+vdcg1 /dcg gnd pulse(0 1.2 38n 1n 1n 10n 50n)
+.tran 1e-09 200e-09 0e-00
+
+* Control Statements 
+.control
+run
+print allv > plot_data_v.txt
+print alli > plot_data_i.txt
+.endc
+.end

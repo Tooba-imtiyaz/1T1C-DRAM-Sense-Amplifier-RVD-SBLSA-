@@ -1,0 +1,63 @@
+.title KiCad schematic
+.include "C:\FOSSEE\eSim\library\deviceModelLibrary\MOS\NMOS-180nm.lib"
+.include "NMOS-180nm.lib"
+.include "PMOS-180nm.lib"
+C4 /BLB GND 100f
+C1 Net-_C1-Pad1_ GND 10f
+MN3 Net-_N10-Pad3_ Net-_N3-Pad2_ /BLB GND CMOSN
+MN2 Net-_Cs1-Pad1_ GND /BLB GND CMOSN
+MP8 Net-_N17-Pad1_ Net-_ENABLE1-Pad1_ Net-_P8-Pad3_ Net-_P8-Pad3_ CMOSP
+VDD3 Net-_P8-Pad3_ GND dc 1.2
+MN15 Net-_C1-Pad1_ Net-_N13-Pad1_ Net-_N15-Pad3_ GND CMOSN
+MN16 Net-_N15-Pad3_ Net-_ENABLE1-Pad1_ GND GND CMOSN
+U1 Net-_C1-Pad1_ plot_v1
+Cs1 Net-_Cs1-Pad1_ GND 30f
+C2 GND Net-_C2-Pad2_ 10f
+U2 Net-_C2-Pad2_ plot_v1
+MP7 Net-_C1-Pad1_ Net-_N13-Pad1_ Net-_P6-Pad1_ Net-_P6-Pad3_ CMOSP
+MN17 Net-_N17-Pad1_ Net-_ENABLE1-Pad1_ GND GND CMOSN
+MP6 Net-_P6-Pad1_ Net-_N17-Pad1_ Net-_P6-Pad3_ Net-_P6-Pad3_ CMOSP
+VDD2 Net-_P6-Pad3_ GND dc 1.2
+MN6 Net-_N10-Pad3_ Net-_CSEL1-Pad1_ Net-_C1-Pad1_ GND CMOSN
+VENABLE1 Net-_ENABLE1-Pad1_ GND pulse(0 1.2 22n 0.5n 0.5n 15n 100n)
+VDD4 Net-_N7-Pad1_ GND dc 600m
+MN5 Net-_C2-Pad2_ Net-_CSEL1-Pad1_ Net-_N10-Pad2_ GND CMOSN
+C3 /BL GND 100f
+Cs2 Net-_Cs2-Pad1_ GND 30f
+VWL1 Net-_N1-Pad2_ GND pulse(0 1.2 8n 0.5n 0.5n 29n 100n)
+MN1 Net-_Cs2-Pad1_ Net-_N1-Pad2_ /BL GND CMOSN
+VDD1 Net-_N3-Pad2_ GND dc 1.2
+MN4 Net-_N10-Pad2_ Net-_N3-Pad2_ /BL GND CMOSN
+VDD9 Net-_P2-Pad4_ GND dc 1.2
+MN19 Net-_N18-Pad3_ Net-_ENABLE1-Pad1_ GND GND CMOSN
+MN13 Net-_N13-Pad1_ Net-_DB1-Pad1_ GND GND CMOSN
+MN18 Net-_C2-Pad2_ Net-_N14-Pad1_ Net-_N18-Pad3_ GND CMOSN
+MN7 Net-_N7-Pad1_ Net-_N7-Pad2_ Net-_N10-Pad2_ GND CMOSN
+MN9 Net-_N10-Pad2_ Net-_N7-Pad2_ Net-_N10-Pad3_ GND CMOSN
+MN8 Net-_N10-Pad3_ Net-_N7-Pad2_ Net-_N7-Pad1_ GND CMOSN
+MN12 Net-_N10-Pad1_ Net-_N12-Pad2_ GND GND CMOSN
+VSAN1 Net-_N12-Pad2_ GND pulse(0 1.2 12n 0.5n 0.5n 25n 100n)
+MN10 Net-_N10-Pad1_ Net-_N10-Pad2_ Net-_N10-Pad3_ GND CMOSN
+VCSEL1 Net-_CSEL1-Pad1_ GND pulse(0 1.2 22n 500p 500p 15n 100n)
+MP5 Net-_N14-Pad1_ Net-_D1-Pad1_ Net-_P5-Pad3_ Net-_P5-Pad3_ CMOSP
+VDD8 Net-_P5-Pad3_ GND dc 1.2
+VD1 Net-_D1-Pad1_ GND dc 1.2
+MP3 Net-_N10-Pad3_ Net-_N10-Pad2_ Net-_P1-Pad3_ Net-_P3-Pad4_ CMOSP
+MP2 Net-_P1-Pad3_ Net-_N10-Pad3_ Net-_N10-Pad2_ Net-_P2-Pad4_ CMOSP
+MP1 Net-_P1-Pad1_ Net-_P1-Pad2_ Net-_P1-Pad3_ Net-_P1-Pad1_ CMOSP
+VSAP1 Net-_P1-Pad2_ GND pulse(1.2 0 12n 0.5n 0.5n 25n 100n)
+VDD6 Net-_P1-Pad1_ GND dc 1.2
+VDD10 Net-_P3-Pad4_ GND dc 1.2
+VPRE1 Net-_N7-Pad2_ GND pulse(1.2 0 0n 500p 500p 7.5n 100n)
+MN14 Net-_N14-Pad1_ Net-_D1-Pad1_ GND GND CMOSN
+MN11 Net-_N10-Pad2_ Net-_N10-Pad3_ Net-_N10-Pad1_ GND CMOSN
+MP4 Net-_N13-Pad1_ Net-_DB1-Pad1_ Net-_P4-Pad3_ Net-_P4-Pad3_ CMOSP
+VDB1 Net-_DB1-Pad1_ GND dc 0
+VDD5 Net-_P4-Pad3_ GND dc 1.2
+MP9 Net-_P10-Pad3_ Net-_N17-Pad1_ Net-_P10-Pad4_ Net-_P10-Pad4_ CMOSP
+VDD7 Net-_P10-Pad4_ GND dc 1.2
+MP10 Net-_C2-Pad2_ Net-_N14-Pad1_ Net-_P10-Pad3_ Net-_P10-Pad4_ CMOSP
+.ic v(BL_NET)=0.6 v(BLB_NET)=0.6 v(net-_n10-pad2_)=0.6 v(net-_n10-pad3_)=0.6 v(net-_cs2-pad1_)=0
+.tran 0.1n 45n uic
+.end
+.end

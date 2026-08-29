@@ -1,0 +1,33 @@
+.title KiCad schematic
+.include "C:\FOSSEE\eSim\library\deviceModelLibrary\MOS\NMOS-180nm.lib"
+.include "C:\FOSSEE\eSim\library\deviceModelLibrary\MOS\PMOS-180nm.lib"
+VSAP1 /SAP GND pulse(1.2 0 20n 1n 1n 15n 50n)
+VCC/2 /VCC/2 GND dc 600m
+VSAN1 /SAN GND pulse(0 1.2 20n 1n 1n 15n 50n)
+VPRE1 /PRE GND pulse(1.2 0 0n 1n 1n 8n 50n)
+VCC1 /VCC GND dc 1.2
+MP1 Net-_N1-Pad3_ /DQB Net-_P1-Pad3_ /VCC eSim_MOS_P
+MN9 /BLB /PRE /VCC/2 GND eSim_MOS_N
+MN4 Net-_N1-Pad3_ /LRA /BLB GND eSim_MOS_N
+MN3 Net-_N1-Pad1_ /SAN GND GND eSim_MOS_N
+MN6 /DQB /DCG Net-_N1-Pad3_ GND eSim_MOS_N
+MN1 Net-_N1-Pad1_ /DQB Net-_N1-Pad3_ GND eSim_MOS_N
+MN7 Net-_N2-Pad1_ /DCG /DQ GND eSim_MOS_N
+MN11 Net-_CS2-Pad1_ /WL0 /BL GND eSim_MOS_N
+MP5 Net-_N2-Pad1_ /SAN /BL /VCC eSim_MOS_P
+MN2 Net-_N2-Pad1_ /DQ Net-_N1-Pad1_ GND eSim_MOS_N
+CS2 Net-_CS2-Pad1_ GND 100f
+MN8 /VCC/2 /PRE /BL GND eSim_MOS_N
+MP3 /VCC /SAP Net-_P1-Pad3_ /VCC eSim_MOS_P
+MP2 Net-_P1-Pad3_ /DQ Net-_N2-Pad1_ /VCC eSim_MOS_P
+MN5 /BL /NLRA Net-_N2-Pad1_ GND eSim_MOS_N
+MN10 /BL /PRE /BLB GND eSim_MOS_N
+MN12 /BLB /WL1 Net-_CS1-Pad1_ GND eSim_MOS_N
+MP4 /BLB /SAN Net-_N1-Pad3_ /VCC eSim_MOS_P
+CS1 Net-_CS1-Pad1_ GND 100f
+VWL0 /WL0 GND pwl(0n 0 10n 0 11n 1.2 35n 1.2 36n 0 110n 0 111n 1.2 135n 1.2 136n 0 200n 0)
+VWL1 /WL1 GND pwl(0n 0 60n 0 61n 1.2 85n 1.2 86n 0 160n 0 161n 1.2 185n 1.2 186n 0 200n 0)
+VNLRA1 /NLRA GND pulse(1.2 0 10n 1n 1n 30n 50n)
+VLRA1 /LRA GND pulse(0 1.2 10n 1n 1n 30n 50n)
+VDCG1 /DCG GND pulse(0 1.2 38n 1n 1n 10n 50n)
+.end
